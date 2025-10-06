@@ -1,0 +1,98 @@
+:root {
+    --primary-color: #4CAF50; /* Green */
+    --secondary-color: #2196F3; /* Blue */
+    --background-color-light: #FFFFFF;
+    --background-color-dark: #121212;
+    --text-color-light: #000000;
+    --text-color-dark: #FFFFFF;
+    --card-background-light: #F9F9F9;
+    --card-background-dark: #1E1E1E;
+    --input-border-light: #CCCCCC;
+    --input-border-dark: #444444;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color));
+    color: var(--text-color-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card {
+    background-color: var(--card-background-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    transition: background-color 0.3s ease;
+}
+
+.card.dark {
+    background-color: var(--card-background-dark);
+}
+
+.form-field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-field input {
+    width: 100%;
+    padding: 10px 40px 10px 40px;
+    border: 1px solid var(--input-border-light);
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.form-field input:focus {
+    border-color: var(--primary-color);
+}
+
+.form-field label {
+    position: absolute;
+    left: 40px;
+    top: 10px;
+    transition: all 0.2s ease;
+    color: var(--input-border-light);
+}
+
+.form-field input:focus + label,
+.form-field input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 40px;
+    font-size: 12px;
+    color: var(--primary-color);
+}
+
+.icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    pointer-events: none;
+}
+
+.password-strength {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.validation-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+    }
+}
